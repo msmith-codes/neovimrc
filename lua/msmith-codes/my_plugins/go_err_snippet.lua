@@ -9,11 +9,14 @@ function M.insert_if_err()
     
 
     local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+    local currentline = vim.api.nvim_get_current_line()
+
+    local indent = currentline:match("^%s*") or ""
 
     local lines = {
-        "if err != nil {",
-        "   ",
-        "}"
+        indent .. "if err != nil {",
+        indent .. "   ",
+        indent .. "}"
     }
 
     vim.api.nvim_buf_set_lines(0, row, row, true, lines)
