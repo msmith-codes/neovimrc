@@ -36,6 +36,15 @@ nvim
 ## 📸  Screenshots
 *Adding Screenshots Soon*
 
+## 🔧  Keybinds
+| Mode     | Keybinding   | Action                      |
+|----------|--------------|-----------------------------|
+| `normal` | `<leader>ff` | Files files using Telescope |
+| `normal` | `<leader>fg` | Live grep search            |
+| `normal` | `<leader>q`  | Closes the current buffer   |
+| `normal` | `<C-n>`      | Toggles file explorer       | 
+
+
 ## 🤝  Contributing
 Contributions are welcome! If you have suggestions or improvements, feel free to open an issue or submit a pull request.
 

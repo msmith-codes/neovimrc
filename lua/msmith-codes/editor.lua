@@ -1,14 +1,12 @@
--- Enable Line Numbers:
-vim.opt.number = true
-vim.opt.relativenumber = false
+local config = require("config")
 
--- Width of Tab:
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
 
--- Uses spaces:
+vim.opt.shiftwidth = config.editor.tab_size
+vim.opt.tabstop = config.editor.tab_size
+vim.opt.softtabstop = config.editor.tab_size
 vim.opt.expandtab = true
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
+vim.o.background = config.theme.mode
+vim.cmd("colorscheme " .. config.theme.style)
+
+vim.keymap.set("n", config.hotkeys.easy_quit, ":wqa<CR>", {noremap = true, silent = true})

@@ -40,6 +40,15 @@ cmp.setup({
 
 -- LSP Language Configuration:
 
+-- Lua
+require("lspconfig").lua_ls.setup({
+    settings = {
+        diagnostics = {
+            globals = { 'vim' },
+        },
+    }
+})
+
 -- C/C++
 require('lspconfig').clangd.setup({})
 require('lspconfig').cmake.setup({

@@ -1,4 +1,5 @@
 local config = require("config")
+
 require("neo-tree").setup({
     filesystem = {
         filtered_items = {
@@ -13,7 +14,7 @@ require("neo-tree").setup({
     }
 })
 
-vim.keymap.set("n", "<C-h>", ":Neotree<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-n>", ":Neotree toggle<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", config.filetree.jump_to, ":Neotree<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", config.filetree.toggle, ":Neotree toggle<CR>", { noremap = true, silent = true })
 
 vim.cmd("Neotree")

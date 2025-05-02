@@ -1,5 +1,32 @@
 return {
-    color_theme = "catppuccin", -- Can be set to "gruvbox" or "catppuccin"
-    color_mode = "dark", -- Can be set to "light" or "dark"
-    tree_side = "left", -- Can be set to "left" or "right"
+    theme = {
+        style = "catppuccin",
+        mode = "dark",
+    },
+    editor = {
+        line_numbers = true,
+        relative_line_numbers = true,
+        highlight_line = true,
+        tab_size = 4,
+    },
+    bufferline = {
+        close = "<leader>q",
+        save = "<leader>w",
+        tab_right = "<TAB>",
+        tab_left = "<S-TAB>",
+    },
+    filetree = {
+        jump_to = "<C-h>",
+        toggle = "<C-n>",
+    },
+    telescope = {
+        findfile = "<leader>ff",
+        livegrep = "<leader>fg",
+    },
+    terminal = {
+        toggle = "<C-\\>"
+    },
+    hotkeys = {
+        easy_quit = "<C-q>",
+    },
 }

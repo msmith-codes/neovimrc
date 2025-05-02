@@ -1,12 +1,18 @@
-require("msmith-codes.editor")
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+local config = require("config")
+vim.opt.number = config.editor.line_numbers
+vim.opt.relativenumber = config.editor.relative_line_numbers
+vim.o.cursorline = config.editor.highlight_line
+
 require("msmith-codes.lazy")
-require("msmith-codes.config")
+require("msmith-codes.editor")
 require("msmith-codes.mapping")
 
 require("msmith-codes.my_plugins")
 
 -- General/Global LSP Configuration
-local api = vim.api
 local lsp = vim.lsp
 
 local make_client_capabilities = lsp.protocol.make_client_capabilities

@@ -33,7 +33,10 @@ require("bufferline").setup{
     }
 }
 
-vim.keymap.set("n", "<leader>q", 
+local config = require("config")
+
+-- Keymap to close a buffer:
+vim.keymap.set("n", config.bufferline.close,
     function()
         local buf = vim.api.nvim_get_current_buf()
         if vim.api.nvim_buf_get_option(buf, "filetype") ~= "neo-tree" then 
@@ -42,9 +45,20 @@ vim.keymap.set("n", "<leader>q",
                 vim.cmd("bdelete " .. buf)
             end
         end
-    end, 
+    end,
     { noremap = true, silent = true }
 )
 
-vim.keymap.set("n", "<TAB>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<S-TAB>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
+-- Keymap to save a file:
+vim.keymap.set("n", config.bufferline.save,
+    function()
+        local buf = vim.api.nvim_get_current_buf()
+        if vim.api.nvim_buf_get_option(buf, "filetype") ~= "neo-tree" then
+            vim.cmd(":w")
+        end
+    end
+)
+
+-- Keymaps for switching buffers.
+vim.keymap.set("n", config.bufferline.tab_right, ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", config.bufferline.tab_left, ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
