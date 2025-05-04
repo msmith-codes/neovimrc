@@ -57,9 +57,6 @@ require('lspconfig').cmake.setup({
 
 require('lspconfig').pylsp.setup({})
 
--- TypeScript
-require('lspconfig').ts_ls.setup({})
-
 -- GoLang:
 require('lspconfig').gopls.setup({
     settings = {
