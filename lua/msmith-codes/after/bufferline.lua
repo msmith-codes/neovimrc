@@ -43,6 +43,20 @@ vim.keymap.set("n", config.bufferline.close,
             if vim.api.nvim_buf_get_option(buf, "buflisted") then
                 vim.cmd("BufferLineCycleNext")
                 vim.cmd("bdelete " .. buf)
+
+                vim.defer_fn(function()
+                    local buffers = vim.fn.getbufinfo({buflisted = 1})
+                    local remaining = vim.tbl_filter(function (b)
+                        return b.name ~= "" and b.listed == 1 and b.hidden == 0
+                    end, buffers)
+
+                    if #remaining == 0 then
+                        require("neo-tree.command").execute({
+                            toggle = true,
+                            dir = vim.loop.cwd(),
+                        })
+                    end
+                end, 50)
             end
         end
     end,

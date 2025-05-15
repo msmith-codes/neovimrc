@@ -10,7 +10,15 @@ require("neo-tree").setup({
     },
     window = {
         position = config.tree_side,
-        width = 30,
+        width = 2000
+    },
+    event_handlers = {
+        {
+            event = "file_opened",
+            handler = function (file_path)
+                require("neo-tree.command").execute({ action = "close" })
+            end
+        }
     }
 })
 
