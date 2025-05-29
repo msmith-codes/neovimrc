@@ -10,8 +10,6 @@ require("msmith-codes.lazy")
 require("msmith-codes.editor")
 require("msmith-codes.mapping")
 
-require("msmith-codes.my_plugins")
-
 -- General/Global LSP Configuration
 local lsp = vim.lsp
 
