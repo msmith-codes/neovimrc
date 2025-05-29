@@ -44,8 +44,24 @@ cmp.setup({
 -- Lua
 require("lspconfig").lua_ls.setup({
     settings = {
-        diagnostics = {
-            globals = { 'vim' },
+        Lua = {
+            runtime = {
+                version = 'LuaJIT',
+                path = vim.split(package.path, ';'),
+            },
+            diagnostics = {
+                globals = { 'vim', 'love' },
+            },
+            workspace = {
+                library = {
+                    vim.env.RUNTIME,
+
+                },
+                checkThirdParty = false,
+            },
+            telemetry = {
+                enable = false,
+            },
         },
     }
 })
