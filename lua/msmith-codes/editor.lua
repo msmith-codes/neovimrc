@@ -10,3 +10,4 @@ vim.o.background = config.theme.mode
 vim.cmd("colorscheme " .. config.theme.style)
 
 vim.keymap.set("n", config.hotkeys.easy_quit, ":wqa<CR>", {noremap = true, silent = true})
+vim.keymap.set("n", "<leader>w", ":w<CR>:so<CR>", {noremap = true, silent = true})
