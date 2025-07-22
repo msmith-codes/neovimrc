@@ -25,4 +25,3 @@ require("neo-tree").setup({
 vim.keymap.set("n", config.filetree.jump_to, ":Neotree<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", config.filetree.toggle, ":Neotree toggle<CR>", { noremap = true, silent = true })
 
-vim.cmd("Neotree")
