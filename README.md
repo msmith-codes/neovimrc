@@ -2,7 +2,7 @@
 
 Welcome to my personal Neovim setup! This configuration is optimized for development in languages like C, C++, Go, and JavaScript, 
 with focus on performance, aesthetics, and productivity.
-> **Note:** This configuration is built for Neovim 0.9+ and utilizes Lua for configuration. 
+> **Note:** This configuration is built for Neovim 0.10+ and utilizes Lua for configuration. 
 
 ## 🚀  Features
 * **Plugin Management:** Efficient handling of plugins using `lazy`.
@@ -13,7 +13,7 @@ with focus on performance, aesthetics, and productivity.
 
 ## 🛠️  Installation
 ### Prerequisites
-* **Neovim:** Ensure you have Neovim version 0.9 or higher installed.
+* **Neovim:** Ensure you have Neovim version 0.10 or higher installed.
 * **Git:** Required for cloning the repository and managing plugins.
 > **Note:** This guide assumes you are using Linux or macOS. If you are using Windows, I'd recommend installing WSL2. 
 
